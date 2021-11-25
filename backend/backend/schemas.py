@@ -14,8 +14,10 @@ class MeasureBase(BaseModel):
     calf: Optional[int]
     
 
-class MeasureCreate(MeasureBase):
-    pass
+class MeasureCreate(MeasureBase):   
+    class Config:
+        orm_mode = True
+
 
 
 class Measure(MeasureBase):
@@ -38,6 +40,12 @@ class UserCreate(UserBase):
 class User(UserBase):
     id: int
     is_active: bool
+    birth_date: Optional[datetime]    
+
+    class Config:
+        orm_mode = True
+
+class UpdateUser(UserBase):
     birth_date: Optional[datetime]    
 
     class Config:

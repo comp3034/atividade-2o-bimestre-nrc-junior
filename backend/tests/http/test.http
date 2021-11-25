@@ -1,81 +1,47 @@
-GET http://127.0.0.1:8000/hello/2021
-
-
-
-
-
-
-
 ###
 POST http://127.0.0.1:8082/users/
 Content-Type: application/json
 
 {
-    "name": "Mario Ix",
-    "email": "mhadaniya1ix@email.com",
+    "name": "Adao Jr",
+    "email": "adao@email.com",
     "password": "12345"
 }
 
-
-
-
-
-
-
-
-###
+### ver todos os users
 GET http://127.0.0.1:8082/users/
 
+### ver um user
+GET http://127.0.0.1:8082/users/4
 
 
-
-
-
-
-###
-GET http://127.0.0.1:8082/users/1
-
-
-###
-PUT http://127.0.0.1:8082/users/1
+### atualizar user
+PUT http://127.0.0.1:8082/users/4
 Content-Type: application/json
 
 {
-    
+    "name": "Junico",
+    "email": "junico@email.com"
 }
 
-
-
-
-
-
-
-
-
-###
-POST http://127.0.0.1:8000/users
+### adicionar medidas de um user
+POST http://127.0.0.1:8082/users/4/measures/
 Content-Type: application/json
 
 {
-    "name": "Ricardo Silva",
-    "email": "ricardo.silva@email.com"
+    "height":180,
+    "weight":100,
+    "neck":50,
+    "biceps":50,
+    "chest":50,
+    "hips":50,
+    "waist":50,
+    "thighs":50,
+    "calf":50
 }
 
+### ver medidas de um user
+GET http://127.0.0.1:8082/users/4/measures/
 
-
-
-
-
-
-
-###
-PUT http://127.0.0.1:8000/users/8
-Content-Type: application/json
-
-{
-    "name": "Nome",
-    "price": 1
-}
-
-### 
-DELETE http://127.0.0.1:8000/users/8
+### ver a medida de todos os users
+GET  http://127.0.0.1:8082/measures/
