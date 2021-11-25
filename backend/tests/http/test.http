@@ -1,0 +1,81 @@
+GET http://127.0.0.1:8000/hello/2021
+
+
+
+
+
+
+
+###
+POST http://127.0.0.1:8082/users/
+Content-Type: application/json
+
+{
+    "name": "Mario Ix",
+    "email": "mhadaniya1ix@email.com",
+    "password": "12345"
+}
+
+
+
+
+
+
+
+
+###
+GET http://127.0.0.1:8082/users/
+
+
+
+
+
+
+
+###
+GET http://127.0.0.1:8082/users/1
+
+
+###
+PUT http://127.0.0.1:8082/users/1
+Content-Type: application/json
+
+{
+    
+}
+
+
+
+
+
+
+
+
+
+###
+POST http://127.0.0.1:8000/users
+Content-Type: application/json
+
+{
+    "name": "Ricardo Silva",
+    "email": "ricardo.silva@email.com"
+}
+
+
+
+
+
+
+
+
+###
+PUT http://127.0.0.1:8000/users/8
+Content-Type: application/json
+
+{
+    "name": "Nome",
+    "price": 1
+}
+
+### 
+DELETE http://127.0.0.1:8000/users/8

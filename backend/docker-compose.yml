@@ -1,0 +1,40 @@
+version: "3"
+services:
+  webapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/usr/app
+    ports:
+      - "8082:8000"
+    networks:
+      - bodyapp
+
+  postgres:
+    image: postgres:12-alpine
+    container_name: db
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "5434:5432"
+    environment:
+      - POSTGRES_DB=bodyapp
+      - POSTGRES_USER=bodyapp
+      - POSTGRES_PASSWORD=Z278hJprS8r7Ur
+    networks:
+      - bodyapp
+
+  mailhog:
+    image: mailhog/mailhog
+    logging:
+      driver: 'none'  # disable saving logs
+    ports:
+      - 1025:1025 # smtp server
+      - 8025:8025 # web ui
+    networks:
+      - bodyapp
+
+networks:
+  bodyapp:
+    driver: bridge

@@ -1,0 +1,36 @@
+name: bodyapp
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 0.0.1+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  validators: ^3.0.0 
+
+  pixel_perfect: ^1.1.0
+  google_fonts: ^2.1.0
+  cupertino_icons: ^1.0.2
+  boxicons: ^2.1.3
+  fluttericon: ^2.0.0
+  dotted_line: ^3.0.0
+
+  direct_select_flutter: ^1.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+
+  uses-material-design: true
+  assets:
+    - design/screens/
+    - assets/images/
+    
